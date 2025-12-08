@@ -9,6 +9,7 @@ use AbuseIO\Observers\EventObserver;
 use AbuseIO\Observers\EvidenceObserver;
 use AbuseIO\Observers\TicketObserver;
 use Config;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Log;
 use Request;
@@ -36,6 +37,9 @@ class AppServiceProvider extends ServiceProvider
             );
             dd();
         }
+
+        // Use Bootstrap pagination (Laravel 8 defaults to Tailwind)
+        Paginator::useBootstrap();
 
         // register observers
         Ticket::observe(TicketObserver::class);
