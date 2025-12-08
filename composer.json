@@ -21,7 +21,7 @@
 		"docs": "https://abuse.io/resources/documentation/"
 	},
 	"require": {
-		"php": "^8.1",
+		"php": "^8.2",
 		"ext-curl": "*",
 		"ext-intl": "*",
 		"ext-json": "*",
@@ -55,21 +55,21 @@
 		"abuseio/parser-spamcop": "3.0.*",
 		"abuseio/parser-spamexperts": "3.0.*",
 		"abuseio/parser-webiron": "3.0.*",
-		"barryvdh/laravel-ide-helper": "^2.10",
+		"barryvdh/laravel-ide-helper": "^3.0",
 		"composer/composer": "^2.0",
 		"guzzlehttp/guzzle": "^7.0",
-		"illuminated/helper-functions": "^10.0",
+		"illuminated/helper-functions": "^11.0",
 		"jeremykendall/php-domain-parser": "^6.0",
 		"jover/singleton": "^1.0",
 		"laminas/laminas-http": "2.14.*",
 		"laminas/laminas-json": "3.2.*",
 		"laminas/laminas-xmlrpc": "2.10.*",
 		"laminas/laminas-zendframework-bridge": "^1.4",
-		"laravel/framework": "^10.0",
+		"laravel/framework": "^11.0",
 		"laravel/helpers": "^1.5",
-		"laravel/tinker": "^2.7",
+		"laravel/tinker": "^2.9",
 		"laravel/ui": "^4.0",
-		"laravelcollective/html": "^6.4",
+		"prabowosd/laravel-collective-html": "^1.1",
 		"league/fractal": "^0.19|^0.20",
 		"madnest/madzipper": "^1.0",
 		"php-mime-mail-parser/php-mime-mail-parser": "^7.0|^8.0",
@@ -77,12 +77,12 @@
 		"sabre/uri": "^2.2|^3.0",
 		"sabre/xml": "^2.2|^4.0",
 		"webpatser/laravel-uuid": "^4.0",
-		"yajra/laravel-datatables-oracle": "^10.0"
+		"yajra/laravel-datatables-oracle": "^11.0"
 	},
 	"require-dev": {
 		"fakerphp/faker": "^1.9",
 		"mockery/mockery": "^1.4",
-		"nunomaduro/collision": "^7.0",
+		"nunomaduro/collision": "^8.0",
 		"phpunit/phpunit": "^10.0"
 	},
 	"autoload": {
