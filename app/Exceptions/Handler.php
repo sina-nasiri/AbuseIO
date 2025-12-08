@@ -7,6 +7,7 @@ use Throwable;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
@@ -34,49 +35,34 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Report or log an exception.
-     *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param \Throwable $exception
+     * Register the exception handling callbacks for the application.
      *
      * @return void
-     *
-     * @throws \Exception
      */
-    public function report(Throwable $exception)
+    public function register(): void
     {
-        parent::report($exception);
-    }
+        $this->reportable(function (Throwable $e) {
+            //
+        });
 
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \Throwable               $exception
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     *
-     * @throws \Throwable
-     */
-    public function render($request, Throwable $exception)
-    {
-        if ($exception instanceof ModelNotFoundException) {
+        $this->renderable(function (ModelNotFoundException $e, $request) {
             if ($request->wantsJson()) {
-                return $this->errorNotFound($exception->getMessage());
+                return $this->errorNotFound($e->getMessage());
             }
-            $exception = new NotFoundHttpException($exception->getMessage(), $exception);
-        }
+            throw new NotFoundHttpException($e->getMessage(), $e);
+        });
 
-        if ($request->wantsJson() && !($exception instanceof \Illuminate\Validation\ValidationException)) {
-            return $this->errorInternalError($exception->getMessage());
-        }
+        $this->renderable(function (ValidationException $e, $request) {
+            if ($request->wantsJson()) {
+                return $this->response($e->errors());
+            }
+        });
 
-        if ($request->wantsJson() && $exception instanceof \Illuminate\Validation\ValidationException) {
-            return $this->response($exception->errors());
-        }
-
-        return parent::render($request, $exception);
+        $this->renderable(function (Throwable $e, $request) {
+            if ($request->wantsJson() && !($e instanceof ValidationException)) {
+                return $this->errorInternalError($e->getMessage());
+            }
+        });
     }
 
     /**

@@ -17,7 +17,7 @@ class UrlCheckerTest extends TestCase
         $this->assertEquals(Uri\normalize($url), $result);
     }
 
-    public function getNormalizerDataSet()
+    public static function getNormalizerDataSet()
     {
         return [
             ['http://www.example.com', 'http://www.example.com/'],
@@ -42,7 +42,7 @@ class UrlCheckerTest extends TestCase
         );
     }
 
-    public function getResolverDataset()
+    public static function getResolverDataset()
     {
         return [
             ['http://www.example.com', '/api', 'http://www.example.com/api'],

@@ -1,5 +1,7 @@
 .env
 .phpstorm.meta.php
+.phpunit.cache/
+.phpunit.result.cache
 /.idea
 /node_modules
 /vendor
