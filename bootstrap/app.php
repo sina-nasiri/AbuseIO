@@ -2,6 +2,18 @@
 
 /*
 |--------------------------------------------------------------------------
+| Suppress Deprecation Notices for PHP 8.4 Compatibility
+|--------------------------------------------------------------------------
+|
+| Laravel 7 uses implicit nullable parameters which are deprecated in PHP 8.4.
+| We suppress these notices until the upgrade to Laravel 10+ is complete.
+|
+*/
+
+error_reporting(E_ALL & ~E_DEPRECATED);
+
+/*
+|--------------------------------------------------------------------------
 | Create The Application
 |--------------------------------------------------------------------------
 |
