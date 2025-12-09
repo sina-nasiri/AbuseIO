@@ -83,6 +83,9 @@
 		"phpunit/phpunit": "^10.0"
 	},
 	"autoload": {
+		"files": [
+			"app/Overrides/Singleton.php"
+		],
 		"classmap": [
 			"database",
 			"vendor/abuseio/"
@@ -91,7 +94,10 @@
 			"AbuseIO\\": "app/",
 			"Database\\Factories\\": "database/factories/",
 			"Database\\Seeders\\": "database/seeders/"
-		}
+		},
+		"exclude-from-classmap": [
+			"vendor/jover/singleton/src/Singleton.php"
+		]
 	},
 	"autoload-dev": {
 		"psr-4": {
