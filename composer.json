@@ -59,7 +59,6 @@
 		"guzzlehttp/guzzle": "^7.0",
 		"illuminated/helper-functions": "^11.0",
 		"jeremykendall/php-domain-parser": "^6.0",
-		"jover/singleton": "^1.0",
 		"laminas/laminas-http": "^2.19",
 		"laminas/laminas-json": "^3.6",
 		"laminas/laminas-xmlrpc": "^2.18",
