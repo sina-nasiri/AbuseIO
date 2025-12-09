@@ -27,36 +27,19 @@ $app = new Illuminate\Foundation\Application(
 */
 
 $app->singleton(
-    'Illuminate\Contracts\Http\Kernel',
-    'AbuseIO\Http\Kernel'
+    Illuminate\Contracts\Http\Kernel::class,
+    AbuseIO\Http\Kernel::class
 );
 
 $app->singleton(
-    'Illuminate\Contracts\Console\Kernel',
-    'AbuseIO\Console\Kernel'
+    Illuminate\Contracts\Console\Kernel::class,
+    AbuseIO\Console\Kernel::class
 );
 
 $app->singleton(
-    'Illuminate\Contracts\Debug\ExceptionHandler',
-    'AbuseIO\Exceptions\Handler'
+    Illuminate\Contracts\Debug\ExceptionHandler::class,
+    AbuseIO\Exceptions\Handler::class
 );
-
-///*
-// * Configure Monolog.
-// */
-//$app->configureMonologUsing(
-//
-//    function (Monolog\Logger $monolog) {
-//        $syslog = new \Monolog\Handler\SyslogHandler('abuseio');
-//
-//        $formatter = new \Monolog\Formatter\LineFormatter('%channel%.%level_name%: %message%');
-//
-//        $syslog->setFormatter($formatter);
-//
-//        $monolog->pushHandler($syslog);
-//    }
-//
-//);
 
 /*
 |--------------------------------------------------------------------------

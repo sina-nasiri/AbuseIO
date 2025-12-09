@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
          bootstrap="bootstrap/autoload.php"
          colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false">
+         stopOnFailure="false"
+         cacheDirectory=".phpunit.cache">
     <testsuites>
         <testsuite name="Application Test Suite">
             <directory>./tests/</directory>
@@ -20,4 +18,9 @@
         <env name="QUEUE_DRIVER" value="sync"/>
         <const name="PHPUNIT_YOURAPPLICATION_TESTSUITE" value="true"/>
     </php>
+    <source>
+        <include>
+            <directory>./app</directory>
+        </include>
+    </source>
 </phpunit>

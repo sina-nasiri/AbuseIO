@@ -189,7 +189,6 @@ return [
         /*
          * Some plugin Service Providers ...
          */
-        Wpb\String_Blade_Compiler\StringBladeServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
         /*
