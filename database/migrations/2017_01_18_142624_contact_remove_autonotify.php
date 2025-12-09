@@ -13,7 +13,7 @@ class ContactRemoveAutonotify extends Migration
      */
     public function up()
     {
-        foreach (Contact::where('auto_notify', 1) as $contact) {
+        foreach (Contact::where('auto_notify', 1)->get() as $contact) {
             $contact->addNotificationMethod(['method' => 'Mail']);
         }
 
