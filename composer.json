@@ -61,10 +61,9 @@
 		"illuminated/helper-functions": "^11.0",
 		"jeremykendall/php-domain-parser": "^6.0",
 		"jover/singleton": "^1.0",
-		"laminas/laminas-http": "2.14.*",
-		"laminas/laminas-json": "3.2.*",
-		"laminas/laminas-xmlrpc": "2.10.*",
-		"laminas/laminas-zendframework-bridge": "^1.4",
+		"laminas/laminas-http": "^2.19",
+		"laminas/laminas-json": "^3.6",
+		"laminas/laminas-xmlrpc": "^2.18",
 		"laravel/framework": "^11.0",
 		"laravel/helpers": "^1.5",
 		"laravel/tinker": "^2.9",
@@ -120,6 +119,13 @@
 			"Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
 			"@php artisan package:discover --ansi"
 		]
+	},
+	"replace": {
+		"zendframework/zend-http": "*",
+		"zendframework/zend-loader": "*",
+		"zendframework/zend-stdlib": "*",
+		"zendframework/zend-uri": "*",
+		"zendframework/zend-validator": "*"
 	},
 	"config": {
 		"preferred-install": "dist",
