@@ -106,10 +106,12 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
+			"@php scripts/fix-singleton.php",
 			"php artisan clear-compiled",
 			"php artisan queue:restart"
 		],
 		"post-update-cmd": [
+			"@php scripts/fix-singleton.php",
 			"php artisan clear-compiled",
 			"php artisan ide-helper:generate",
 			"php artisan queue:restart"
