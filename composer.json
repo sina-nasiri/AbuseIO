@@ -120,13 +120,6 @@
 			"@php artisan package:discover --ansi"
 		]
 	},
-	"replace": {
-		"zendframework/zend-http": "*",
-		"zendframework/zend-loader": "*",
-		"zendframework/zend-stdlib": "*",
-		"zendframework/zend-uri": "*",
-		"zendframework/zend-validator": "*"
-	},
 	"config": {
 		"preferred-install": "dist",
 		"sort-packages": true,
